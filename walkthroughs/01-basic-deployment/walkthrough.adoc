@@ -3,9 +3,9 @@
 :openshift-url: {openshift-host}
 :user-password: openshift
 
-= Lab 01 - Camel K Introduction
+= Lab 1 - Camel K Introduction
 
-Introduction to Camel K. Basic concepts and how to deploy your first integration.
+Introduction to Camel K's basic concepts and how to deploy your first integration.
 
 https://camel.apache.org/camel-k/latest/[Camel K] is a lightweight integration framework built from Apache Camel that runs natively on Kubernetes and is specifically designed for serverless and microservice architectures.
 

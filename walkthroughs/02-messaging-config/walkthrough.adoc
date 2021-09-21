@@ -3,7 +3,7 @@
 :openshift-url: {openshift-host}
 :user-password: openshift
 
-= Lab 02 - Messaging and Config Files
+= Lab 2 - Messaging and Config Files
 
 Connect to a message broker and use configmaps to change the integration configuration.
 
