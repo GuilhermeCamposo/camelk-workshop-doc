@@ -5,7 +5,7 @@
 
 = Workshop Introduction
 
-Introduction to Camel K.
+Introduction to Camel K. Basic concepts and how to deploy your first integration.
 
 https://camel.apache.org/camel-k/latest/[Camel K] is a lightweight integration framework built from Apache Camel that runs natively on Kubernetes and is specifically designed for serverless and microservice architectures.
 
