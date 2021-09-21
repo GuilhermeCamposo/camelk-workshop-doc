@@ -5,7 +5,7 @@
 
 = Lab 02 - Messaging and Config Files
 
-Connect to a message broker and log the message content.
+Connect to a message broker and use configmaps to change the integration configuration.
 
 In the first lab you learned what is and how to use Camel K. Now is time to see other possibilities when writing integrations using it.
 
@@ -133,12 +133,14 @@ Wait for the kit build to finish and then start monitoring the integration logs:
 kamel logs amqp-route
 ----
 
+leave the command running, we will need it later.
+
 image::images/03_logs.png[Logs, role="integr8ly-img-responsive"]
 
 [type=verification]
 Are your integration running?
 
-Let's use AMQ's web console to send messages to our queue. Open it using the route.
+Let's use AMQ's web console to send messages to our queue. Open it using the amq-broker route.
 
 In case you forgot the credentials:
 

@@ -3,7 +3,7 @@
 :openshift-url: {openshift-host}
 :user-password: openshift
 
-= Workshop Introduction
+= Lab 01 - Camel K Introduction
 
 Introduction to Camel K. Basic concepts and how to deploy your first integration.
 
