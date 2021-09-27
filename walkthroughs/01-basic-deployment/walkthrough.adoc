@@ -64,21 +64,13 @@ Were you able to open the workspace?
 
 As you could see, the workspace starts without a project. So let's create one.
 
-. On the left panel, under *tools*, click on *New terminal*.
-. This will open a terminal tab on the screen.
+. On the right panel, click *New Folder*.
+. Type in the project name, `camelk-project`.
 
-image::images/02_new-terminal.png[Che Workspace, role="integr8ly-img-responsive"]
-
-Let's create a folder to host our integrations. On the terminal, run:
-
-[source,bash]
-----
-mkdir camelk-project
-cd camelk-project
-----
+image::images/02_new-folder.png[New Folder, role="integr8ly-img-responsive"]
 
 To interact with Camel K Operator, we are going to use the Camel K CLI (kamel). Start with a simple  help command.
-In the terminal, run:
+On the right side panel, click on *tools -> New terminal*. In the terminal, run:
 
 [source,bash]
 ----
@@ -95,7 +87,7 @@ kamel init BasicRoute.java
 
 The folder and the newly created file will be visible in the *explorer tab*. Take a look at how the Java file looks like:
 
-image::images/03_new-class.png[Che Workspace, role="integr8ly-img-responsive"]
+image::images/03_new-class.png[New Class, role="integr8ly-img-responsive"]
 
 {empty} +
 
