@@ -123,7 +123,7 @@ Run the integration:
 
 [source, bash]
 ----
-kamel run --configmap amqp-route-cm AmqpRoute.java
+kamel run API.java --open-api open-api.yml --configmap api-route-cm
 ----
 
 Wait for the kit build to finish and then start monitoring the integration logs:
