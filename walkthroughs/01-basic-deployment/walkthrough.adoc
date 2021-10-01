@@ -190,4 +190,4 @@ Were you able to update your integration?
 [time=1]
 == Summary
 
-Congratulations you finished your first example with *CamelK*!
+Congratulations, you finished your first example with *CamelK*!

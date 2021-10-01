@@ -104,13 +104,6 @@ Log in OpenShift. On the right panel, under tools, click on `log in openshift`.
 
 On the right panel, under tools, click on `New terminal`.
 
-navigate to the project folder:
-
-[source, bash]
-----
-cd camelk-project
-----
-
 Start by creating the Configmap in your namespace:
 
 
