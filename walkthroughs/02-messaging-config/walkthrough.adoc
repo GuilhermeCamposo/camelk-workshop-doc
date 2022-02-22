@@ -68,10 +68,12 @@ public class AmqpRoute extends RouteBuilder {
 }
 ----
 
-We are using a the Camel syntax, `{{ property-key }}`, to access a property value and modify how we are declaring the route.
+We are using the Camel syntax, `{{ property-key }}`, to access a property value and modify how we are declaring the route.
 This is very useful because with a single route declaration, we may be able to configure this integration to work in different environments.
 
-To access a broker we need information like the broker URL, user and password, and when using Quarkus we don't usually set them in the code, but in the `application.properties` file.
+To be able to access a message broker, we need information like the broker URL, user and password.
+When using Quarkus we don't usually set these in the code, but in the `application.properties` file.
+Since we are not packing a jar here, things work in different way.
 
 Kubernetes allow us to separate application binaries and configuration files, by using `Secrets` and `Configmaps`, and that is exactly what we are going to use, a Configmap to be used as the application properties.
 
@@ -90,21 +92,21 @@ data:
   queue.name: camelk
 ----
 
-Now we have all the required information to access the broker
+Now we have all the required information to access the broker.
 
 [type=verification]
-Did you create the files?
+Did you create the file?
 
 [time=10]
 == Running and testing
 
 Now that you have the files, is time to deploy the integration.
 
-Log in OpenShift. On the right panel, under tools, click on `log in openshift`.
+In case you are not, Log in OpenShift using the right panel command.
 
 On the right panel, under tools, click on `New terminal`.
 
-Start by creating the Configmap in your namespace:
+Start by creating the *Configmap* in your namespace:
 
 
 [source, bash]
@@ -112,7 +114,7 @@ Start by creating the Configmap in your namespace:
 oc apply -f cm.yaml
 ----
 
-Run the integration:
+Run the integration mapping the configmap created to your route:
 
 [source, bash]
 ----
@@ -164,5 +166,7 @@ Are you able to visualize the message?
 
 [time=1]
 == Summary
+
+In this lab you learned how to separate your integration code and the code configuration using ConfigMap. You also saw how to connect to the AMQ Broker using the AMQP component.
 
 Congratulations on finishing another lab about Camel K!
