@@ -141,6 +141,7 @@ in the `openapi.yml` file. This means that Camel k is taking care of declaring t
 
 You should also have noticed the dependencies declaration in the file.
 
+[source, java]
 ---
 // camel-k: dependency=mvn:io.quarkus:quarkus-jdbc-postgresql
 // camel-k: dependency=mvn:org.postgresql:postgresql:jar:42.2.13

@@ -96,13 +96,18 @@ It's a `Camel Route` just like you learned in the `Fuse Workshop`.
 [type=verification]
 Were you able to open the generated code?
 
-=== Camel DSL
+=== Language support
 
-Camel K works with different DSLs (Domain Specific Language) types. The supported ones are:
+Camel K supports multiple languages for writing integrations:
 
 . Java
 . YAML
 . XML
+. Groovy (Experimental)
+. Kotlin (Experimental)
+. JShell (Experimental)
+. JavaScript (Experimental)
+
 
 For this workshop we will continue to use *Java* language.
 
