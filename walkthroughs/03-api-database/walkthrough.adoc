@@ -142,11 +142,11 @@ in the `openapi.yml` file. This means that Camel k is taking care of declaring t
 You should also have noticed the dependencies declaration in the file.
 
 [source, java]
----
+----
 // camel-k: dependency=mvn:io.quarkus:quarkus-jdbc-postgresql
 // camel-k: dependency=mvn:org.postgresql:postgresql:jar:42.2.13
 // camel-k: dependency=mvn:org.apache.commons:commons-dbcp2:jar:2.7.0
----
+----
 
 We had to use it because this route has dependencies that cannot be inferred by analyzing the code, such which jdbc driver it should use.
 
