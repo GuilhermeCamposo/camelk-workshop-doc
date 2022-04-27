@@ -27,7 +27,7 @@ The Operator is already installed for you and a development environment is provi
 ****
 
 
-=== Lab Requirements
+== Lab Requirements
 
 . Web Browser (Firefox or Chrome)
 
