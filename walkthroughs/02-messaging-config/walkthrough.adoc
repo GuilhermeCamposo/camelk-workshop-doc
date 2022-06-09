@@ -25,10 +25,105 @@ As an example we are going to connect to https://access.redhat.com/products/red-
 * link:{openshift-url}[Console, window="_blank"]
 ****
 
-[time=4]
-== Setting up the environment
+== Installing AMQ Broker 
 
-We are going to use the same AMQ Broker installation provisioned in the `Fuse Workshop`. I case you missed it, go back to the `Fuse Workshop - Lab 05 - Publish to OpenShift`.
+Let's provision an AMQ Broker on this step. On the *Developer* view, click on *Add* on the left side menu.
+Select *Operator Backed* option. Filter by *AMQ Broker* and select the *AMQ Broker* tile.
+
+image::./images/07.png[]
+
+{empty} +
+Click on *Create*.
+
+image::./images/08.png[]
+
+On the configuration select *Yaml view*  and paste the following content:
+
+[source,yaml,subs="attributes+", id="amq-cr"]
+----
+apiVersion: broker.amq.io/v2alpha5
+kind: ActiveMQArtemis
+metadata:
+  name: amq-broker
+  application: amq-broker
+  namespace: {user-username}-project
+spec:
+  acceptors:
+    - enabledProtocols: amqp
+      name: amqp
+      port: 5672
+    - enabledProtocols: core
+      name: core
+      port: 61616
+  addressSettings: {}
+  adminPassword: redhat
+  adminUser: redhat
+  console:
+    expose: true
+  deploymentPlan:
+    size: 1
+    podSecurity: {}
+    resources: {}
+    readinessProbe: {}
+    messageMigration: false
+    extraMounts: {}
+    managementRBACEnabled: true
+    livenessProbe: {}
+    journalType: nio
+    image: placeholder
+    storage: {}
+  upgrades:
+    enabled: false
+    minor: false
+----
+
+{empty} +
+
+image::./images/09.png[]
+
+If everything worked fine, you should see a new pod in the *topology* view.
+
+Now, let's open the Management Console of the AMQ Broker. On the left panel, click *Search*. On the resources dropbox, select `Route`.
+
+image::./images/11.png[]
+
+{empty} +
+
+Click on the Route URL.
+
+image::./images/12.png[]
+
+{empty} +
+Click on *Management Console*.
+
+image::./images/13.png[]
+
+
+Enter the following credentials:
+
+* Username: `redhat`
+* Password: `redhat`
+
+image::./images/14.png[]
+
+{empty} +
+This is AMQ Console main page. Click on the Queues tab.
+
+image::./images/15.png[]
+
+{empty} +
+You may use this page to monitor the queues statistics.
+
+image::./images/16.png[]
+
+{empty} +
+
+[type=verification]
+Were you able to deploy AMQ?
+
+
+[time=4]
+== Setting up the Queue
 
 For this lab we are going to need a new queue. In the `{user-username}-project` namespace, using the *Developer view*, go *+Add -> Operator Backed -> AMQ Broker Address*.
 
